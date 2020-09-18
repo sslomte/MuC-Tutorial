@@ -109,6 +109,7 @@
     <!--Possible values and conditions for option Tracking-->
     <parameter name="VertexUnconstrainedChoices" type="StringVec">ON OFF  </parameter>
     <!--verbosity level of this processor ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
+    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> MESSAGE  </parameter>
   </processor>
 
   <processor name="EventNumber" type="Statusmonitor">
@@ -357,7 +358,22 @@
 
     <processor name="OverlayBIB" type="OverlayTimingGeneric">
       <parameter name="BackgroundFileNames" type="StringVec">
-	/data/samples/1p5TeV/bib/mod3_25ns_nEkin150MeV/sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
+	data/BIB//sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
+	data/BIB//sim_mumi-1e3x500-26m-lowth-excl_j2.slcio
+	data/BIB//sim_mumi-1e3x500-26m-lowth-excl_j3.slcio
+	data/BIB//sim_mumi-1e3x500-26m-lowth-excl_j4.slcio
+	data/BIB//sim_mumi-1e3x500-26m-lowth-excl_j5.slcio
+	data/BIB//sim_mumi-1e3x500-26m-lowth-excl_j6.slcio
+	data/BIB//sim_mumi-1e3x500-26m-lowth-excl_j7.slcio
+	data/BIB//sim_mumi-1e3x500-26m-lowth-excl_j8.slcio
+	data/BIB//sim_mupl-1e3x500-26m-lowth-excl_j1.slcio
+	data/BIB//sim_mupl-1e3x500-26m-lowth-excl_j2.slcio
+	data/BIB//sim_mupl-1e3x500-26m-lowth-excl_j3.slcio
+	data/BIB//sim_mupl-1e3x500-26m-lowth-excl_j4.slcio
+	data/BIB//sim_mupl-1e3x500-26m-lowth-excl_j5.slcio
+	data/BIB//sim_mupl-1e3x500-26m-lowth-excl_j6.slcio
+	data/BIB//sim_mupl-1e3x500-26m-lowth-excl_j7.slcio
+	data/BIB//sim_mupl-1e3x500-26m-lowth-excl_j8.slcio
       </parameter>
       <parameter name="StartBackgroundFileIndex" type="int" value="0"/>
       <parameter name="AllowReusingBackgroundFiles" type="bool" value="false" />
@@ -889,7 +905,7 @@
   <!-- ======================================================================================================== -->
 
   <processor name="MyDDMarlinPandora" type="DDPandoraPFANewProcessor">
-    <parameter name="PandoraSettingsXmlFile" type="String">/data/config/reco/PandoraSettings/PandoraSettingsDefault.xml</parameter>
+    <parameter name="PandoraSettingsXmlFile" type="String">MuC-Tutorial/config/reco/PandoraSettings/PandoraSettingsDefault.xml</parameter>
     <!-- CLIC specifict software compensation weights derived from K0L and neutrons -->
     <parameter name="SoftwareCompensationWeights" type="FloatVec">1.61741 -0.00444385 2.29683e-05 -0.0731236 -0.00157099 -7.09546e-07 0.868443 1.0561 -0.0238574</parameter>
     <parameter name="SoftwareCompensationEnergyDensityBins" type="FloatVec">0 2. 5. 7.5 9.5 13. 16. 20. 23.5 28. 33. 40. 50. 75. 100.</parameter>

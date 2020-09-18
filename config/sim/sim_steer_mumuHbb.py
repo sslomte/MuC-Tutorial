@@ -13,7 +13,7 @@ SIM.enableG4GPS = False
 SIM.enableG4Gun = False
 SIM.enableGun = False
 ## InputFiles for simulation .stdhep, .slcio, .HEPEvt, .hepevt, .hepmc files are supported
-SIM.inputFiles = ["/data/samples/1p5TeV/mumuHbb/mumu2H2bb750.stdhep"]
+SIM.inputFiles = ["data/mumu2H2bb750.stdhep"]
 ## Macro file to execute for runType 'run' or 'vis'
 SIM.macroFile = []
 ## number of events to simulate, used in batch mode
