@@ -1,8 +1,14 @@
-//This is a simple macro to compare the signal+BIB and the signal only track reconstruction
-//It relies on the MyTrackChecker/checktree variables
-//Cuts on the maximum chi2 and the minimum number of hits can be set as external parameters
+void compare_sig_and_BIB(Double_t chi2_max=20., Int_t nhits_min=0, Int_t plot_ID=0){
 
-void compare_sig_and_BIB(Double_t chi2_max=20., Int_t nhits_min=0){
+  cout << "Usage: " << endl;
+  cout << "compare_sig_and_BIB(Double_t chi2_max=20., Int_t nhits_min=0, Int_t plot_ID=0)"<< endl;
+  cout << "Plot IDs are the following" << endl;
+  cout << "0: chi2/ndof" << endl;
+  cout << "1: number of hits" << endl;
+  cout << "2: track pt" << endl;
+  cout << "3: D0" << endl;
+  cout << "4: Z0" << endl;
+  cout << "5: Omega" << endl;
 
   //Input files are loaded
 
@@ -188,54 +194,77 @@ void compare_sig_and_BIB(Double_t chi2_max=20., Int_t nhits_min=0){
 
   //Histograms for signal+BIB and signal only are plotted and compared
 
-  TCanvas* can_Chi2OverNDF = new TCanvas("can_Chi2OverNDF","can_Chi2OverNDF",900,600);
-  h_reco_Chi2OverNDF_sig_only->Scale(1./h_reco_Chi2OverNDF_sig_only->Integral());
-  h_reco_Chi2OverNDF_sig_only->Draw("histo");
   h_reco_Chi2OverNDF_sig_and_BIB->SetLineColor(kRed);
-  h_reco_Chi2OverNDF_sig_and_BIB->Scale(1./h_reco_Chi2OverNDF_sig_and_BIB->Integral());
-  h_reco_Chi2OverNDF_sig_and_BIB->Draw("histo same");
-  
   auto legend = new TLegend(0.4,0.7,0.74,0.9);
   legend->AddEntry(h_reco_Chi2OverNDF_sig_only,"prompt muons","l");
   legend->AddEntry(h_reco_Chi2OverNDF_sig_and_BIB,"prompt muons + BIB","l");
-  legend->Draw();
 
-  TCanvas* can_recoNhits = new TCanvas("can_recoNhits","can_recoNhits",900,600);
-  h_recoNhits_sig_and_BIB->SetLineColor(kRed);
-  h_recoNhits_sig_and_BIB->Scale(1./h_recoNhits_sig_and_BIB->Integral());
-  h_recoNhits_sig_and_BIB->Draw("histo");
-  h_recoNhits_sig_only->Scale(1./h_recoNhits_sig_only->Integral());
-  h_recoNhits_sig_only->Draw("histo same");
-  legend->Draw();
+  if (plot_ID==0){
 
-  TCanvas* can_recoPt = new TCanvas("can_recoPt","can_recoPt",900,600);
-  h_recoPt_sig_and_BIB->SetLineColor(kRed);
-  h_recoPt_sig_and_BIB->Scale(1./h_recoPt_sig_and_BIB->Integral());
-  h_recoPt_sig_and_BIB->Draw("histo");
-  h_recoPt_sig_only->Scale(1./h_recoPt_sig_only->Integral());
-  h_recoPt_sig_only->Draw("histo same");
-  legend->Draw();
-
-  TCanvas* can_recoD0 = new TCanvas("can_recoD0","can_recoD0",900,600);
-  h_recoD0_sig_only->Scale(1./h_recoD0_sig_only->Integral());
-  h_recoD0_sig_only->Draw("histo");
-  h_recoD0_sig_and_BIB->SetLineColor(kRed);
-  h_recoD0_sig_and_BIB->Scale(1./h_recoD0_sig_and_BIB->Integral());
-  h_recoD0_sig_and_BIB->Draw("histo same");
+    TCanvas* can_Chi2OverNDF = new TCanvas("can_Chi2OverNDF","can_Chi2OverNDF",900,600);
+    h_reco_Chi2OverNDF_sig_only->Scale(1./h_reco_Chi2OverNDF_sig_only->Integral());
+    h_reco_Chi2OverNDF_sig_only->Draw("histo");
+    h_reco_Chi2OverNDF_sig_and_BIB->SetLineColor(kRed);
+    h_reco_Chi2OverNDF_sig_and_BIB->Scale(1./h_reco_Chi2OverNDF_sig_and_BIB->Integral());
+    h_reco_Chi2OverNDF_sig_and_BIB->Draw("histo same"); 
+    legend->Draw();
   
-  TCanvas* can_recoZ0 = new TCanvas("can_recoZ0","can_recoZ0",900,600);
-  h_recoZ0_sig_only->Scale(1./h_recoZ0_sig_only->Integral());
-  h_recoZ0_sig_only->Draw("histo");
-  h_recoZ0_sig_and_BIB->SetLineColor(kRed);
-  h_recoZ0_sig_and_BIB->Scale(1./h_recoZ0_sig_and_BIB->Integral());
-  h_recoZ0_sig_and_BIB->Draw("histo same");
+    }
 
-  TCanvas* can_recoOmega = new TCanvas("can_recoOmega","can_recoOmega",900,600);
-  h_recoOmega_sig_only->Scale(1./h_recoOmega_sig_only->Integral());
-  h_recoOmega_sig_only->Draw("histo");
-  h_recoOmega_sig_and_BIB->SetLineColor(kRed);
-  h_recoOmega_sig_and_BIB->Scale(1./h_recoOmega_sig_and_BIB->Integral());
-  h_recoOmega_sig_and_BIB->Draw("histo same");
+  if (plot_ID==1){
+    TCanvas* can_recoNhits = new TCanvas("can_recoNhits","can_recoNhits",900,600);
+    h_recoNhits_sig_and_BIB->SetLineColor(kRed);
+    h_recoNhits_sig_and_BIB->Scale(1./h_recoNhits_sig_and_BIB->Integral());
+    h_recoNhits_sig_and_BIB->Draw("histo");
+    h_recoNhits_sig_only->Scale(1./h_recoNhits_sig_only->Integral());
+    h_recoNhits_sig_only->Draw("histo same");
+    legend->Draw();
+    }
+  
+  if (plot_ID==2){
+    TCanvas* can_recoPt = new TCanvas("can_recoPt","can_recoPt",900,600);
+    h_recoPt_sig_and_BIB->SetLineColor(kRed);
+    h_recoPt_sig_and_BIB->Scale(1./h_recoPt_sig_and_BIB->Integral());
+    h_recoPt_sig_and_BIB->Draw("histo");
+    h_recoPt_sig_only->Scale(1./h_recoPt_sig_only->Integral());
+    h_recoPt_sig_only->Draw("histo same");
+    legend->Draw();
+    }
+
+  h_recoD0_sig_and_BIB->SetLineColor(kRed);
+  auto legend2 = new TLegend(0.1,0.7,0.34,0.9);
+  legend2->AddEntry(h_recoD0_sig_only,"prompt muons","l");
+  legend2->AddEntry(h_recoD0_sig_and_BIB,"prompt muons + BIB","l");
+
+  if (plot_ID==3){
+    TCanvas* can_recoD0 = new TCanvas("can_recoD0","can_recoD0",900,600);
+    h_recoD0_sig_only->Scale(1./h_recoD0_sig_only->Integral());
+    h_recoD0_sig_only->Draw("histo");
+    h_recoD0_sig_and_BIB->SetLineColor(kRed);
+    h_recoD0_sig_and_BIB->Scale(1./h_recoD0_sig_and_BIB->Integral());
+    h_recoD0_sig_and_BIB->Draw("histo same");
+    legend2->Draw();
+    }  
+
+  if (plot_ID==4){
+    TCanvas* can_recoZ0 = new TCanvas("can_recoZ0","can_recoZ0",900,600);
+    h_recoZ0_sig_only->Scale(1./h_recoZ0_sig_only->Integral());
+    h_recoZ0_sig_only->Draw("histo");
+    h_recoZ0_sig_and_BIB->SetLineColor(kRed);
+    h_recoZ0_sig_and_BIB->Scale(1./h_recoZ0_sig_and_BIB->Integral());
+    h_recoZ0_sig_and_BIB->Draw("histo same");
+    legend2->Draw();
+    }
+
+  if (plot_ID==5){
+    TCanvas* can_recoOmega = new TCanvas("can_recoOmega","can_recoOmega",900,600);
+    h_recoOmega_sig_only->Scale(1./h_recoOmega_sig_only->Integral());
+    h_recoOmega_sig_only->Draw("histo");
+    h_recoOmega_sig_and_BIB->SetLineColor(kRed);
+    h_recoOmega_sig_and_BIB->Scale(1./h_recoOmega_sig_and_BIB->Integral());
+    h_recoOmega_sig_and_BIB->Draw("histo same");
+    legend2->Draw();
+    }
 
   cout << "number of tracks with signal+BIB = " <<  ntracks_sig_and_BIB << endl;
   cout << "number of tracks with signal only = " <<  ntracks_sig_only << endl;
