@@ -1,6 +1,6 @@
-#Excercise on the simulation and reconstruction events
+#Exercise on the simulation and reconstruction events
 
-#In this execise you are going to learn how to simulate and reconstruct events without beam-induced background within the ILCSoftware framework. You are going to learn how to extract the event ntuples and use them to analyze the event. 
+#In this exercise you are going to learn how to simulate and reconstruct events without beam-induced background within the ILCSoftware framework. You are going to learn how to extract the event ntuples and use them to analyze the event. 
 
 #The chosen signal is of mu+ mu- -> H + neutrinos -> bb + neutrinos at 1.5 TeV center of mass energy
 
