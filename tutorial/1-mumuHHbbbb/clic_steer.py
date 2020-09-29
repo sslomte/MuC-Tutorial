@@ -14,13 +14,13 @@ SIM.enableG4GPS = False
 SIM.enableG4Gun = False
 SIM.enableGun = False
 ## InputFiles for simulation .stdhep, .slcio, .HEPEvt, .hepevt, .hepmc files are supported
-SIM.inputFiles = ["/data/samples/HH/HH_bb_events_3.hepmc"]
+SIM.inputFiles = ["/data/muonc/samples/HH/mumu2H2bb750.stdhep"]
 ## Macro file to execute for runType 'run' or 'vis'
 SIM.macroFile = ""
 ## number of events to simulate, used in batch mode. -1 all
 SIM.numberOfEvents = 10
 ## Outputfile from the simulation,only lcio output is supported
-SIM.outputFile = "mumu_HH_bb_3.slcio"
+SIM.outputFile = "mumu_H_bb_3.slcio"
 ## Verbosity use integers from 1(most) to 7(least) verbose
 ## or strings: VERBOSE, DEBUG, INFO, WARNING, ERROR, FATAL, ALWAYS
 SIM.printLevel = "VERBOSE"
