@@ -44,7 +44,7 @@ TH1F* phi_histo=new TH1F("phi_histo","phi_histo",20,-2,2);
    TBranch        *b_jene;   
 
 TChain* fChain = new TChain("fChain");
-   fChain->Add("JetHistograms.root/MyLCTuple");
+   fChain->Add("/data/ntuples/HH/JetHistograms.root/MyLCTuple");
    
 
    fChain->SetBranchAddress("nj", &nj, &b_njet);
@@ -55,7 +55,6 @@ TChain* fChain = new TChain("fChain");
    fChain->SetBranchAddress("jene", jene, &b_jene);
 
 double inv_mass[1000][1000];
-//for(int i=0; i<1000; i++) {for(int j=0;j<1000;j++){inv_mass[i][j]=0;}}
 
 double delta_min=10000000;
 double delta_tot;
@@ -192,7 +191,7 @@ if (plot_ID==6){
 
 
 
-TFile* f=new TFile("Plotsmass2.root","RECREATE");
+TFile* f=new TFile("Plotsmass.root","RECREATE");
    if ( f->IsOpen() ) cout << "File opened successfully" << endl;
 n_jets_ev->Write();
 m->Write();
