@@ -136,7 +136,7 @@
 
   <global>
     <parameter name="LCIOInputFiles">
-    ../mumu_HH_bb_3.slcio
+    mumu_H_bb_3.slcio
     </parameter>
     <!-- Limit the number of processed records (run+evt): -->
     <parameter name="MaxRecordNumber" value="10" />
