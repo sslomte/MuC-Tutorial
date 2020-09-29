@@ -6,13 +6,13 @@
 
 #To simulate the signal (only 10 events of H to bb):
 
-ddsim --steeringFile=clic_steer.py > ddsim.out 2>&1
+ddsim --steeringFile sim_steer_Hbb.py > sim.out
 
 
-#It will produce the file mumu_H_bb_3.slcio as output.
+#It will produce the file mumu_H_bb.slcio as output.
 #To reconstruct the signal:
 
-Marlin recoNewGeoNoBeamLumiCal.xml > log.txt
+Marlin reco_steer_Hbb.xml > reco.out
 
 
 #It produces some outputs:
@@ -23,7 +23,7 @@ Marlin recoNewGeoNoBeamLumiCal.xml > log.txt
 #To produce final ntuples for the analysis:
 
 
-Marlin jet.xml > logjets.txt
+Marlin lctuple_steer.xml > ntuples.out
 
 #Final root file with ntuples: JetHistograms.root
 
