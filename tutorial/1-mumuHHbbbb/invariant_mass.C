@@ -14,8 +14,9 @@ cout << "0: number of reconstructed jets" << endl;
 cout << "1: pseudorapidity of jets in the event" << endl;
 cout << "2: transverse momentum of jets in the event" << endl;
 cout << "3: phi of jets in the event" << endl;
-cout << "4: invariant mass of jet pair associated to Higgs with highest pT" << endl;
-cout << "5: invariant mass of jet pair associated to Higgs with lowest pT" << endl;
+cout << "4: energy of jets in the event" << endl;
+cout << "5: invariant mass of jet pair associated to Higgs with highest pT" << endl;
+cout << "6: invariant mass of jet pair associated to Higgs with lowest pT" << endl;
 
 TH1F* m=new TH1F("m","m",40,0,250);
 TH1F* n_jets_ev=new TH1F("n_jets_ev","n_jets_ev",14,0,14);
