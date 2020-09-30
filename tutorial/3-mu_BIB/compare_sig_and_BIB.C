@@ -116,14 +116,14 @@ void compare_sig_and_BIB(Double_t chi2_max=20., Int_t nhits_min=0, Int_t plot_ID
   //Histograms are prepared
 
   TH1F* h_reco_Chi2OverNDF_sig_and_BIB = new TH1F("h_reco_Chi2OverNDF_sig_and_BIB",";track #chi^{2}/ndof",120,-1,20);
-  TH1F* h_recoNhits_sig_and_BIB = new TH1F("h_recoNhits_sig_and_BIB",";layer ID",20,0,20); 
+  TH1F* h_recoNhits_sig_and_BIB = new TH1F("h_recoNhits_sig_and_BIB",";number of hits",20,0,20); 
   TH1F* h_recoPt_sig_and_BIB = new TH1F("h_recoPt_sig_and_BIB",";p_{T} [GeV]",40,0,10);
   TH1F* h_recoOmega_sig_and_BIB = new TH1F("h_recoOmega_sig_and_BIB",";#omega [1/mm]",200,-0.01,0.01);
   TH1F* h_recoD0_sig_and_BIB = new TH1F("h_recoD0_sig_and_BIB",";D0 [mm]",140,-0.5,0.5);
   TH1F* h_recoZ0_sig_and_BIB = new TH1F("h_recoZ0_sig_and_BIB",";Z0 [mm]",400,-2,2);
 
   TH1F* h_reco_Chi2OverNDF_sig_only = new TH1F("h_reco_Chi2OverNDF_sig_only",";track #chi^{2}/ndof",120,-1,20);
-  TH1F* h_recoNhits_sig_only = new TH1F("h_recoNhits_sig_only",";layer ID",20,0,20);
+  TH1F* h_recoNhits_sig_only = new TH1F("h_recoNhits_sig_only",";number of hits",20,0,20);
   TH1F* h_recoPt_sig_only = new TH1F("h_recoPt_sig_only",";p_{T} [GeV]",40,0,10);
   TH1F* h_recoOmega_sig_only = new TH1F("h_recoOmega_sig_only",";#omega [1/mm]",200,-0.01,0.01);
   TH1F* h_recoD0_sig_only = new TH1F("h_recoD0_sig_only",";D0 [mm]",140,-0.5,0.5);
