@@ -4,15 +4,15 @@
 
 #The chosen signal is of mu+ mu- -> H + neutrinos -> bb + neutrinos at 1.5 TeV center of mass energy
 
-#To simulate the signal (only 10 events of H to bb):
+#To simulate the signal (only 1 event of H to bb):
 
-ddsim --steeringFile sim_steer_Hbb.py > sim.out
+ddsim --steeringFile sim_steer_Hbb.py > sim.out 2>&1
 
 
 #It will produce the file mumu_H_bb.slcio as output.
 #To reconstruct the signal:
 
-Marlin reco_steer_Hbb.xml > reco.out
+Marlin reco_steer_Hbb.xml > reco.out 2>&1
 
 
 #It produces some outputs:
@@ -23,7 +23,7 @@ Marlin reco_steer_Hbb.xml > reco.out
 #To produce final ntuples for the analysis:
 
 
-Marlin lctuple_steer.xml > ntuples.out
+Marlin lctuple_steer.xml > ntuples.out 2>&1
 
 #Final root file with ntuples: JetHistograms.root
 
