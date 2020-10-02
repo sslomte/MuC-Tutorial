@@ -173,7 +173,6 @@
     <parameter name="DropCollectionTypes" type="StringVec">
       LCRelation
       TrackerHitPlane
-      ReconstructedParticle 
       SimCalorimeterHit
       CalorimeterHit
       SimTrackerHit
