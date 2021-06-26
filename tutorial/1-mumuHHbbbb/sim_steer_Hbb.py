@@ -6,7 +6,8 @@ from g4units import mm, GeV, MeV, m, deg
 SIM = DD4hepSimulation()
 
 ## The compact XML file
-SIM.compactFile = "/opt/ilcsoft/v02-01-pre/detector-simulation/geometries/CLIC_o3_v14_mod4/CLIC_o3_v14.xml"
+SIM.compactFile = "/opt/ilcsoft/muonc/detector-simulation/geometries/CLIC_o3_v14_mod4/CLIC_o3_v14.xml"
+#SIM.compactFile = "/opt/ilcsoft/v02-01-pre/detector-simulation/geometries/CLIC_o3_v14_mod4/CLIC_o3_v14.xml"
 ## Lorentz boost for the crossing angle, in radian!
 SIM.crossingAngleBoost = 0.010
 SIM.enableDetailedShowerMode = True
@@ -14,7 +15,8 @@ SIM.enableG4GPS = False
 SIM.enableG4Gun = False
 SIM.enableGun = False
 ## InputFiles for simulation .stdhep, .slcio, .HEPEvt, .hepevt, .hepmc files are supported
-SIM.inputFiles = ["/data/samples/HH/mumu2H2bb750.stdhep"]
+#SIM.inputFiles = ["/data/samples/HH/mumu2H2bb750.stdhep"]
+SIM.inputFiles = ["/afs/hep.wisc.edu/home/slomte/trial/mumu2H2bb750.stdhep"]
 ## Macro file to execute for runType 'run' or 'vis'
 SIM.macroFile = ""
 ## number of events to simulate, used in batch mode. -1 all
