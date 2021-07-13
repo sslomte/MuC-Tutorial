@@ -118,7 +118,7 @@
   </processor>
 
 <processor name="MyFastJetProcessor" type="FastJetProcessor">
-		<parameter name="algorithm" type="StringVec">anti_kt_algorithm 1.3</parameter>
+		<parameter name="algorithm" type="StringVec">antikt_algorithm 1.3</parameter>
 		<parameter name="clusteringMode" type="StringVec"> Inclusive 5</parameter>
 		<parameter name="jetOut" type="string" lcioOutType="ReconstructedParticle">JetOut </parameter>
 		<parameter name="recParticleIn" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs </parameter>
