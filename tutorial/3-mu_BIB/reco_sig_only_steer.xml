@@ -54,10 +54,10 @@
     <processor name="Refit" />
 
     <!-- ===  Calorimeter and muon digitization and pandora reco  === -->
-    <!-- MC <processor name="MyDDCaloDigi"/> -->
-    <!-- MC <processor name="MyDDSimpleMuonDigi"/> -->
-    <!-- MC <processor name="MyDDMarlinPandora"/> -->
-    <!-- MC <group name="MergeCollections" /> -->
+    <processor name="MyDDCaloDigi"/> 
+    <processor name="MyDDSimpleMuonDigi"/>
+    <processor name="MyDDMarlinPandora"/> 
+    <group name="MergeCollections" /> 
 
     <!-- ==========  Monitoring  ========== -->
     <processor name="MyClicEfficiencyCalculator"/>
@@ -66,24 +66,24 @@
     <processor name="MyHitResiduals"/> <!-- please uncomment the use of this processor only if needed -->
 
     <!-- ===============  PFOSelector  ================= -->
-    <!-- MC <group name="PfoSelector" /> -->
+    <group name="PfoSelector" />
 
     <!-- ==========  Vertexing and jet clustering  ========== -->
-    <!-- MC <if condition="Config.OverlayFalse"> -->
-    <!-- MC   <processor name="RenameCollection"/> -->
-    <!-- MC </if> -->
-    <!-- MC <if condition="Config.OverlayNotFalse"> -->
-    <!-- MC   <processor name="MyFastJetProcessor"/> -->
-    <!-- MC </if> -->
-    <!-- MC <processor name="VertexFinder"/> -->
-    <!-- MC <processor name="JetClusteringAndRefiner"/> -->
-    <!-- MC <if condition="Config.VertexUnconstrainedON"> -->
-    <!-- MC   <processor name="VertexFinderUnconstrained"/> -->
-    <!-- MC </if> -->
+    <if condition="Config.OverlayFalse"> 
+    <processor name="RenameCollection"/> 
+    </if> 
+    <if condition="Config.OverlayNotFalse"> 
+    <processor name="MyFastJetProcessor"/> 
+    </if> 
+    <processor name="VertexFinder"/> 
+    <processor name="JetClusteringAndRefiner"/> 
+    <if condition="Config.VertexUnconstrainedON"> 
+    <processor name="VertexFinderUnconstrained"/> 
+    </if> 
 
     <!-- ==========  Output  ========== -->
-    <!-- <processor name="Output_REC"/> -->
-    <!-- <processor name="Output_DST"/> -->
+    <processor name="Output_REC"/>
+    <processor name="Output_DST"/> 
 
   </execute>
 
@@ -135,7 +135,7 @@
 
   <global>
     <parameter name="LCIOInputFiles">
-      /data/samples/muons/muonGun1000_sim.slcio
+      mumu_HH_bbbb_3tev.slcio
     </parameter>
     <!-- Limit the number of processed records (run+evt): -->
     <parameter name="MaxRecordNumber" value="-1" />
@@ -171,8 +171,7 @@
     </parameter>
     <parameter name="DropCollectionTypes" type="StringVec">
       LCRelation
-      TrackerHitPlane
-      ReconstructedParticle 
+      TrackerHitPlane 
       SimCalorimeterHit
       CalorimeterHit
       SimTrackerHit
@@ -180,33 +179,30 @@
       Track
       Cluster
     </parameter>
-    <parameter name="KeepCollectionNames" type="StringVec">
-      SiTracks_Refitted
-    </parameter>
-    <!-- <parameter name="KeepCollectionNames" type="StringVec"> -->
-    <!--   RecoMCTruthLink -->
-    <!--   SiTracksMCTruthLink -->
-    <!--   MergedRecoParticles -->
-    <!--   SelectedPandoraPFOs -->
-    <!--   MCParticle -->
-    <!--   MCPhysicsParticles -->
-    <!--   VXDTrackerHitRelations  -->
-    <!--   VXDEndcapTrackerHitRelations  -->
-    <!--   InnerTrackerBarrelHitsRelations  -->
-    <!--   OuterTrackerBarrelHitsRelations  -->
-    <!--   InnerTrackerEndcapHitsRelations  -->
-    <!--   OuterTrackerEndcapHitsRelations -->
-    <!--   VXDTrackerHits  -->
-    <!--   VXDEndcapTrackerHits  -->
-    <!--   ITrackerHits  -->
-    <!--   OTrackerHits  -->
-    <!--   ITrackerEndcapHits  -->
-    <!--   OTrackerEndcapHits -->
-    <!--   SiTracks -->
-    <!--   SiTracksCT -->
-    <!--   SiTracks_Refitted -->
-    <!--   PandoraClusters -->
-    <!-- </parameter> -->
+    <parameter name="KeepCollectionNames" type="StringVec"> 
+    	RecoMCTruthLink 	
+    	SiTracksMCTruthLink 
+	MergedRecoParticles 
+	SelectedPandoraPFOs 
+	MCParticle 
+	MCPhysicsParticles 
+	VXDTrackerHitRelations  
+	VXDEndcapTrackerHitRelations  
+	InnerTrackerBarrelHitsRelations  
+	OuterTrackerBarrelHitsRelations  
+	InnerTrackerEndcapHitsRelations  
+	OuterTrackerEndcapHitsRelations 
+	VXDTrackerHits  
+	VXDEndcapTrackerHits  
+	ITrackerHits  
+	OTrackerHits  
+	ITrackerEndcapHits  
+	OTrackerEndcapHits 
+	SiTracks 
+	SiTracksCT 
+	SiTracks_Refitted 
+	PandoraClusters 
+    </parameter> 
     <parameter name="DropCollectionNames" type="StringVec">  </parameter>
     <parameter name="LCIOWriteMode" type="string" value="WRITE_NEW"/>
     <!-- <parameter name="SplitFileSizekB" type="int">996147 </parameter> -->
@@ -360,29 +356,29 @@
 
     <processor name="OverlayBIB" type="OverlayTimingGeneric">
       <parameter name="BackgroundFileNames" type="StringVec">
-	/data/samples/BIB/sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
-	/data/samples/BIB/sim_mumi-1e3x500-26m-lowth-excl_j2.slcio
-	/data/samples/BIB/sim_mumi-1e3x500-26m-lowth-excl_j3.slcio
-	/data/samples/BIB/sim_mumi-1e3x500-26m-lowth-excl_j4.slcio
-        /data/samples/BIB/sim_mumi-1e3x500-26m-lowth-excl_j5.slcio
-	/data/samples/BIB/sim_mumi-1e3x500-26m-lowth-excl_j6.slcio
-	/data/samples/BIB/sim_mumi-1e3x500-26m-lowth-excl_j7.slcio
-	/data/samples/BIB/sim_mumi-1e3x500-26m-lowth-excl_j8.slcio
-	/data/samples/BIB/sim_mupl-1e3x500-26m-lowth-excl_j1.slcio
-	/data/samples/BIB/sim_mupl-1e3x500-26m-lowth-excl_j2.slcio
-	/data/samples/BIB/sim_mupl-1e3x500-26m-lowth-excl_j3.slcio
-	/data/samples/BIB/sim_mupl-1e3x500-26m-lowth-excl_j4.slcio
-        /data/samples/BIB/sim_mupl-1e3x500-26m-lowth-excl_j5.slcio
-        /data/samples/BIB/sim_mupl-1e3x500-26m-lowth-excl_j6.slcio
-        /data/samples/BIB/sim_mupl-1e3x500-26m-lowth-excl_j7.slcio
-	/data/samples/BIB/sim_mupl-1e3x500-26m-lowth-excl_j8.slcio
+	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
+	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j2.slcio
+	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j3.slcio
+	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j4.slcio
+        /scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j5.slcio
+	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j6.slcio
+	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j7.slcio
+	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j8.slcio
+	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j1.slcio
+	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j2.slcio
+	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j3.slcio
+	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j4.slcio
+        /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j5.slcio
+        /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j6.slcio
+        /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j7.slcio
+	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j8.slcio
       </parameter>
       <parameter name="StartBackgroundFileIndex" type="int" value="0"/>
       <parameter name="AllowReusingBackgroundFiles" type="bool" value="false" />
       <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT">WARNING </parameter>
       <parameter name="NBunchtrain" type="int" value="1" />
       <!--<parameter name="NumberBackground" type="float" value="2993" />-->
-      <parameter name="NumberBackground" type="float" value="10" />
+      <parameter name="NumberBackground" type="float" value="30" />
     </processor>
 
   </group>
