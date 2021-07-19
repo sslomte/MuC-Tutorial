@@ -7,7 +7,7 @@ SIM = DD4hepSimulation()
 
 ## The compact XML file
 #SIM.compactFile = "/opt/ilcsoft/v02-01-pre/detector-simulation/geometries/CLIC_o3_v14_mod4/CLIC_o3_v14.xml"
-SIM.compactFile = "/opt/ilcsoft/muonc/detector-simulation/geometries/CLIC_o3_v14_mod4/CLIC_o3_v14.xml"
+SIM.compactFile = "/opt/ilcsoft/muonc/detector-simulation/geometries/MuColl_v1/MuColl_v1.xml"
 ## Lorentz boost for the crossing angle, in radian!
 SIM.crossingAngleBoost = 0.010
 SIM.enableDetailedShowerMode = True
@@ -17,13 +17,13 @@ SIM.enableGun = False
 ## InputFiles for simulation .stdhep, .slcio, .HEPEvt, .hepevt, .hepmc files are supported
 #SIM.inputFiles = ["/data/samples/HH/mumu2H2bb750.stdhep"]
 #SIM.inputFiles = ["/scratch/slomte/MuC-Tutorial/tutorial/trial/mumu2H2bb750.hepmc"]
-SIM.inputFiles = ["/afs/hep.wisc.edu/home/slomte/trial/mumu2H2bb750.stdhep"]
+SIM.inputFiles = ["bbbb_3tev_whizard.stdhep"]
 ## Macro file to execute for runType 'run' or 'vis'
 SIM.macroFile = ""
 ## number of events to simulate, used in batch mode. -1 all
 SIM.numberOfEvents = 100
 ## Outputfile from the simulation,only lcio output is supported
-SIM.outputFile = "mumu_H_bb.slcio"
+SIM.outputFile = "mumu_HH_bbbb_3tev.slcio"
 ## Verbosity use integers from 1(most) to 7(least) verbose
 ## or strings: VERBOSE, DEBUG, INFO, WARNING, ERROR, FATAL, ALWAYS
 SIM.printLevel = "VERBOSE"
