@@ -283,8 +283,8 @@
 
     <processor name="OverlayBIB" type="OverlayTimingGeneric">
       <parameter name="BackgroundFileNames" type="StringVec">
-	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
-	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j2.slcio
+	../../../sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
+	<!--/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j2.slcio
 	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j3.slcio
 	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j4.slcio
         /scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j5.slcio
@@ -298,7 +298,7 @@
         /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j5.slcio
         /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j6.slcio
         /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j7.slcio
-	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j8.slcio
+	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j8.slcio-->
       </parameter>
       <parameter name="StartBackgroundFileIndex" type="int" value="0"/>
       <parameter name="AllowReusingBackgroundFiles" type="bool" value="false" />
