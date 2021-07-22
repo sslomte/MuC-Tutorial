@@ -122,7 +122,7 @@
     <!-- compression of output file 0: false >0: true (default) -->
     <parameter name="Compress" type="int" value="1"/>
     <!-- filename without extension-->
-    <parameter name="FileName" type="string" value="histograms_HH_sig_only"/>
+    <parameter name="FileName" type="string" value="histograms_HH_sig_and_BIB"/>
     <!-- type of output file xml (default) or root ( only OpenScientist)-->
     <parameter name="FileType" type="string" value="root "/>
   </processor>
@@ -283,22 +283,22 @@
 
     <processor name="OverlayBIB" type="OverlayTimingGeneric">
       <parameter name="BackgroundFileNames" type="StringVec">
-	../../../sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
-	<!--/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j2.slcio
-	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j3.slcio
-	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j4.slcio
-        /scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j5.slcio
-	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j6.slcio
-	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j7.slcio
-	/scratch/data/BIB/sim_mumi-1e3x500-26m-lowth-excl_j8.slcio
-	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j1.slcio
-	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j2.slcio
-	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j3.slcio
-	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j4.slcio
-        /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j5.slcio
-        /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j6.slcio
-        /scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j7.slcio
-	/scratch/data/BIB/sim_mupl-1e3x500-26m-lowth-excl_j8.slcio-->
+	../../../../../BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
+	../../../../../BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j2.slcio
+	../../../../../BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j3.slcio
+	../../../../../BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j4.slcio
+        ../../../../../BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j5.slcio
+	../../../../../BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j6.slcio
+	../../../../../BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j7.slcio
+	../../../../../BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j8.slcio
+	../../../../../BIBsamples/sim_mupl-1e3x500-26m-lowth-excl_j1.slcio
+	../../../../../BIBsamples/sim_mupl-1e3x500-26m-lowth-excl_j2.slcio
+	../../../../../BIBsamples/sim_mupl-1e3x500-26m-lowth-excl_j3.slcio
+	../../../../../BIBsamples/sim_mupl-1e3x500-26m-lowth-excl_j4.slcio
+        ../../../../../BIBsamples/sim_mupl-1e3x500-26m-lowth-excl_j5.slcio
+        ../../../../../BIBsamples/sim_mupl-1e3x500-26m-lowth-excl_j6.slcio
+        ../../../../../BIBsamples/sim_mupl-1e3x500-26m-lowth-excl_j7.slcio
+	../../../../../BIBsamples/sim_mupl-1e3x500-26m-lowth-excl_j8.slcio
       </parameter>
       <parameter name="StartBackgroundFileIndex" type="int" value="0"/>
       <parameter name="AllowReusingBackgroundFiles" type="bool" value="false" />
