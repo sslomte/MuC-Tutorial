@@ -21,7 +21,7 @@ SIM.inputFiles = ["bbbb_3tev_whizard.stdhep"]
 ## Macro file to execute for runType 'run' or 'vis'
 SIM.macroFile = ""
 ## number of events to simulate, used in batch mode. -1 all
-SIM.numberOfEvents = 100
+SIM.numberOfEvents = 2
 ## Outputfile from the simulation,only lcio output is supported
 SIM.outputFile = "mumu_HH_bbbb_3tev.slcio"
 ## Verbosity use integers from 1(most) to 7(least) verbose
