@@ -737,15 +737,15 @@
     <!--ECAL Time Window minimum time in ns-->
     <parameter name="ECALTimeWindowMin" type="float">-1 </parameter>
     <!--ECAL BarrelTime Window maximum time in ns-->
-    <parameter name="ECALBarrelTimeWindowMax" type="float">5 </parameter>
+    <parameter name="ECALBarrelTimeWindowMax" type="float">2 </parameter>
     <!--ECAL Endcap Time Window maximum time in ns-->
-    <parameter name="ECALEndcapTimeWindowMax" type="float">5 </parameter>
+    <parameter name="ECALEndcapTimeWindowMax" type="float">2 </parameter>
     <!--Use simple time window cut on hit times? If false: use original hit-time clustering algorithm. If true: use time window defined by ECALBarrelTimeWindowMin and ECALBarrelTimeWindowMax-->
     <parameter name="ECALSimpleTimingCut" type="bool">true </parameter>
     <!--ECAL Minimum Delta Time in ns for resolving two hits--> <!-- used only if ECALSimpleTimingCut is false -->
-    <parameter name="ECALDeltaTimeHitResolution" type="float">5 </parameter>
+    <parameter name="ECALDeltaTimeHitResolution" type="float">2 </parameter>
     <!--ECAL Time Resolution used to smear hit times-->
-    <parameter name="ECALTimeResolution" type="float">5 </parameter>
+    <parameter name="ECALTimeResolution" type="float">2 </parameter>
 
 
     <!-- HCAL -->
