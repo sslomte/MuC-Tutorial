@@ -28,7 +28,7 @@
 </execute>
 
 <global>
-<parameter name="LCIOInputFiles"> Output_REC_HH_sig_and_BIB.slcio </parameter>
+<parameter name="LCIOInputFiles"> Output_REC_HH_sig_and_BIB_bib100_10cut.slcio </parameter>
 <parameter name="SkipNEvents" value="0" />
 <parameter name="SupressCheck" value="false" />
 <parameter name="Verbosity"	options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> MESSAGE  </parameter>
@@ -40,7 +40,7 @@
     <!-- compression of output file 0: false >0: true (default) -->
     <parameter name="Compress" type="int" value="1"/>
     <!-- filename without extension-->
-    <parameter name="FileName" type="string" value="JetHistograms_HH_sig_and_BIB"/>
+    <parameter name="FileName" type="string" value="JetHistograms_HH_sig_and_BIB_bib100_10cut"/>
     <!-- type of output file xml (default) or root ( only OpenScientist)-->
     <parameter name="FileType" type="string" value="root "/>
   </processor>
@@ -82,9 +82,9 @@
     <!--Name of the ReconstructedParticle collection-->
     <parameter name="RecoParticleCollection" type="string" lcioInType="ReconstructedParticle"> MergedRecoParticles </parameter> 
     <!--Name of the SimCalorimeterHit collection-->
-    <parameter name="SimCalorimeterHitCollection" type="string" lcioInType="SimCalorimeterHit"> ECalBarrelCollection ECalEndcapCollection HCalBarrelCollection HCalEndcapCollection HCalRingCollection </parameter>
+    <!--<parameter name="SimCalorimeterHitCollection" type="string" lcioInType="SimCalorimeterHit"> ECalBarrelCollection ECalEndcapCollection HCalBarrelCollection HCalEndcapCollection HCalRingCollection </parameter>-->
     <!--Name of the SimTrackerHit collection-->
-    <parameter name="SimTrackerHitCollection" type="string" lcioInType="SimTrackerHit"> InnerTrackerBarrelCollection InnerTrackerEndcapCollection OuterTrackerBarrelCollection OuterTrackerEndcapCollection VertexBarrelCollection VertexEndcapCollection </parameter>
+    <!--<parameter name="SimTrackerHitCollection" type="string" lcioInType="SimTrackerHit"> InnerTrackerBarrelCollection InnerTrackerEndcapCollection OuterTrackerBarrelCollection OuterTrackerEndcapCollection VertexBarrelCollection VertexEndcapCollection </parameter>-->
     <!--Name of the Track collection-->
     <parameter name="TrackCollection" type="string" lcioInType="Track">SiTracks_Refitted </parameter>
     <!--Name of the TrackerHit collection-->
@@ -118,7 +118,7 @@
   </processor>
 
 <processor name="MyFastJetProcessor" type="FastJetProcessor">
-		<parameter name="algorithm" type="StringVec">antikt_algorithm 0.7</parameter>
+		<parameter name="algorithm" type="StringVec">antikt_algorithm 0.5</parameter>
 		<parameter name="clusteringMode" type="StringVec"> Inclusive 5</parameter>
 		<parameter name="jetOut" type="string" lcioOutType="ReconstructedParticle">JetOut </parameter>
 		<parameter name="recParticleIn" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs </parameter>
