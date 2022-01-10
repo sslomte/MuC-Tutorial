@@ -85,7 +85,7 @@
 
     <!-- ========== Output  ========== -->
     <processor name="Output_REC"/>
-    <processor name="Output_DST"/>
+    <!--<processor name="Output_DST"/>-->
 
   </execute>
 
@@ -122,7 +122,7 @@
     <!-- compression of output file 0: false >0: true (default) -->
     <parameter name="Compress" type="int" value="1"/>
     <!-- filename without extension-->
-    <parameter name="FileName" type="string" value="histograms_HH_sig_and_BIB"/>
+    <parameter name="FileName" type="string" value="histograms_HH_sig_and_BIB_bib100_10cut"/>
     <!-- type of output file xml (default) or root ( only OpenScientist)-->
     <parameter name="FileType" type="string" value="root "/>
   </processor>
@@ -155,7 +155,7 @@
 
   <processor name="Output_REC" type="LCIOOutputProcessor">
     <!--   standard output: full reconstruction keep all collections -->
-    <parameter name="LCIOOutputFile" type="string"> Output_REC_HH_sig_and_BIB.slcio </parameter>
+    <parameter name="LCIOOutputFile" type="string"> Output_REC_HH_sig_and_BIB_bib100_10cut.slcio </parameter>
     <parameter name="FullSubsetCollections" type="StringVec"> EfficientMCParticles InefficientMCParticles </parameter>
     <parameter name="LCIOWriteMode" type="string" value="WRITE_NEW"/>
     <!--parameter name="SplitFileSizekB" type="int">996147 </parameter-->
@@ -305,7 +305,7 @@
       <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT">WARNING </parameter>
       <parameter name="NBunchtrain" type="int" value="1" />
       <!--<parameter name="NumberBackground" type="float" value="2993" />-->
-      <parameter name="NumberBackground" type="float" value="1497" />
+      <parameter name="NumberBackground" type="float" value="2993" />
     </processor>
 
 
