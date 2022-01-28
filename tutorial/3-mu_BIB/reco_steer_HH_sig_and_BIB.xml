@@ -283,7 +283,7 @@
 
     <processor name="OverlayBIB" type="OverlayTimingGeneric">
       <parameter name="BackgroundFileNames" type="StringVec">
-	/cvmfs/cms.hep.wisc.edu/mucol/reference/slomte_BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
+	/cvmfs/cms.hep.wisc.edu/mucol/reference/slmote_BIBsamples/sim_mumi-1e3x500-26m-lowth-excl_j1.slcio
 	<!--../../../sim_mumi-1e3x500-26m-lowth-excl_j2.slcio
 	../../../sim_mumi-1e3x500-26m-lowth-excl_j3.slcio
 	../../../sim_mumi-1e3x500-26m-lowth-excl_j4.slcio
