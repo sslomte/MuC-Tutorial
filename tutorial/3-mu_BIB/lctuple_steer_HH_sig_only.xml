@@ -21,7 +21,11 @@
    <processor name="MyAIDAProcessor"/> 
    <processor name="MyFastJetProcessor" />
    <processor name="MyLCTuple" /> 
-   
+   <processor name="MyFastGenJetProcessor"/>
+   <!--<processor name="MyFastRecoJetProcessor"/>-->
+   <processor name="JetHistogramGenJetTuple"/>
+   <!--<processor name="JetHistogramRecoJetTuple"/>-->
+	
    <!-- ========== Output  ========== -->
    <!--processor name="MyLCIOOutputProcessor" /-->
 
@@ -73,7 +77,7 @@
     <!--Names of LCRelation collections of PFO-->
     <parameter name="LCRelationwithPFOCollections" type="string" lcioInType="LCRelation"> </parameter>
     <!--Name of the MCParticle collection-->
-    <parameter name="MCParticleCollection" type="string" lcioInType="MCParticle"> </parameter>
+    <parameter name="MCParticleCollection" type="string" lcioInType="MCParticle"> MCParticle </parameter>
     <parameter name="MCParticleNotReco" type="string" lcioOutType="MCParticle"> </parameter>
     <!--Name of the MCParticle collection where the overlay is removed-->
     <!--parameter name="MCParticleRemoveOverlayCollection" type="string" lcioInType="MCParticle"> </parameter-->
@@ -115,8 +119,8 @@
     <parameter name="WriteTrackerHitCollectionParameters" type="bool">false </parameter>
     <!--Switch to write out collection parameters-->
     <parameter name="WriteVertexCollectionParameters" type="bool">false </parameter>
-  </processor>
-
+  </processor>	
+	
 <processor name="MyFastJetProcessor" type="FastJetProcessor">
 		<parameter name="algorithm" type="StringVec">antikt_algorithm 0.5</parameter>
 		<parameter name="clusteringMode" type="StringVec"> Inclusive 5</parameter>
@@ -125,6 +129,20 @@
 		
 		<parameter name="recombinationScheme" type="string">E_scheme </parameter>
 </processor>
+	
+<processor name="JetHistogramGenJetTuple" type="LCTuple">
+  <parameter name="JetCollection" type="string" lcioInType="ReconstructedParticle"> GenJet </parameter>
+  <parameter name="JetCollectionExtraParameters" type="bool">true </parameter>
+  <parameter name="WriteJetCollectionParameters" type="bool">true </parameter>
+</processor>
+	
+<processor name="MyFastGenJetProcessor" type="FastJetProcessor">
+  <parameter name="recParticleIn" type="string" lcioInType="MCParticle"> MCParticle </parameter>
+  <parameter name="algorithm" type="StringVec"> antikt_algorithm 0.5 </parameter>
+  <parameter name="clusteringMode" type="StringVec"> Inclusive 5 </parameter>
+  <parameter name="recombinationScheme" type="string">E_scheme </parameter>
+  <parameter name="jetOut" type="string" lcioOutType="ReconstructedParticle"> GenJet </parameter>
+  </processor>
 
 <processor name="MyLCIOOutputProcessor" type="LCIOOutputProcessor">
 		<parameter name="LCIOOutputFile" type="string">outputfile.slcio </parameter>
