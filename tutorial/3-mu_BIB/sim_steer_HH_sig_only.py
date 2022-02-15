@@ -15,13 +15,14 @@ SIM.enableG4Gun = False
 SIM.enableGun = False
 ## InputFiles for simulation .stdhep, .slcio, .HEPEvt, .hepevt, .hepmc files are supported
 ##SIM.inputFiles = ["/data/samples/HH/mumu2H2bb750.stdhep"]
-SIM.inputFiles = ["bbbb_3tev_whizard.stdhep"]
+#SIM.inputFiles = ["bbbb_3tev_whizard.stdhep"]
+SIM.inputFiles = ["/cvmfs/cms.hep.wisc.edu/mucol/reference/slmote_BIBsamples/HH_bb_events_3.hepmc"]
 ## Macro file to execute for runType 'run' or 'vis'
 SIM.macroFile = ""
 ## number of events to simulate, used in batch mode. -1 all
-SIM.numberOfEvents = 5
+SIM.numberOfEvents = 1
 ## Outputfile from the simulation,only lcio output is supported
-SIM.outputFile = "mumu_HH_bbbb_3TeV_sig_only.slcio"
+SIM.outputFile = "mumu_HH_bbbb_3TeV_hepmc.slcio"
 ## Verbosity use integers from 1(most) to 7(least) verbose
 ## or strings: VERBOSE, DEBUG, INFO, WARNING, ERROR, FATAL, ALWAYS
 SIM.printLevel = "VERBOSE"
