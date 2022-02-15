@@ -16,7 +16,7 @@ SIM.enableGun = False
 ## InputFiles for simulation .stdhep, .slcio, .HEPEvt, .hepevt, .hepmc files are supported
 ##SIM.inputFiles = ["/data/samples/HH/mumu2H2bb750.stdhep"]
 #SIM.inputFiles = ["bbbb_3tev_whizard.stdhep"]
-SIM.inputFiles = ["/cvmfs/cms.hep.wisc.edu/mucol/reference/slmote_BIBsamples/HH_bb_events_3.hepmc"]
+SIM.inputFiles = ["/cvmfs/cms.hep.wisc.edu/mucol/reference/slomte_BIBsamples/HH_bb_events_3.hepmc"]
 ## Macro file to execute for runType 'run' or 'vis'
 SIM.macroFile = ""
 ## number of events to simulate, used in batch mode. -1 all
